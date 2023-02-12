@@ -1,1 +1,27 @@
-<p>login works!</p>
+<main>
+  <div class="container">
+    <div class="title-section">
+      <a routerLink="/" class="arrow-back"><i class="ph-arrow-left"></i></a>
+      <h1>Cad<span>+</span></h1>
+      <span class="subtitle">Faça o login!</span>
+    </div>
+    <form class="login-form">
+      <div class="form-label">
+        <label for="email">Endereço de email:</label>
+        <input type="email" name="email" id="email">
+      </div>
+
+      <div class="form-label">
+        <label for="password">Sua senha:</label>
+        <input type="password" name="password" id="password">
+      </div>
+
+      <div class="checkbox-label">
+        <input type="checkbox" name="remember" id="remember">
+        <label for="remember">Lembrar de mim</label>
+      </div>
+
+      <button routerLink="/dashboard">Entrar</button>
+    </form>
+  </div>
+</main>
