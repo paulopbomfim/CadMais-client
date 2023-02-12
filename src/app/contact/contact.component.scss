@@ -1,0 +1,37 @@
+main {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+
+  div {
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: #123952;
+  }
+
+  span {
+    font-size: 1rem;
+    color: #F25D27
+  }
+
+  a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    padding: 1rem 0.5rem;
+    background-color: #123952;
+    width: 20rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
