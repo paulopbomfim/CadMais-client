@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%; //? 1rem = 15px 
+  }
+};
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%; //? 1rem = 14px 
+  }
+};
+
+@media (max-width: 480px) {
+  html {
+    font-size: 81.25%; //? 1rem = 13px 
+  }
+};
