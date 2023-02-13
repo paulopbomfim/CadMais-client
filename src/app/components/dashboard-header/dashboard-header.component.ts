@@ -9,7 +9,12 @@ import { Component } from '@angular/core';
 export class DashboardHeaderComponent {
   PageRoute: string = "";
 
-  constructor(router: Router) {
+  constructor(private router: Router) {
     this.PageRoute = router.routerState.snapshot.url;
+  }
+
+  exit() {
+    localStorage.removeItem("ReturnLogin");
+    this.router.navigate(["/"])
   }
 }

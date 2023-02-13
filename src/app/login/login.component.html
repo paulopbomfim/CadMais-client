@@ -8,20 +8,15 @@
     <form class="login-form">
       <div class="form-label">
         <label for="email">Endereço de email:</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" [(ngModel)]="UserLogin.Email">
       </div>
 
       <div class="form-label">
         <label for="password">Sua senha:</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" [(ngModel)]="UserLogin.Password">
       </div>
 
-      <div class="checkbox-label">
-        <input type="checkbox" name="remember" id="remember">
-        <label for="remember">Lembrar de mim</label>
-      </div>
-
-      <button routerLink="/dashboard">Entrar</button>
+      <button type="submit" (click)="Login()">Entrar</button>
     </form>
   </div>
 </main>

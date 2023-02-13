@@ -3,7 +3,7 @@
     <h1>Cad<span>+</span></h1>
     <div class="profile-nav" *ngIf="PageRoute === '/dashboard', else Profile">
       <a routerLink="/profile">Perfil</a>
-      <button>Sair</button>
+      <button (click)="exit()">Sair</button>
     </div>
   </div>
 </header>
@@ -11,6 +11,6 @@
 <ng-template #Profile>
   <div class="profile-nav">
     <a routerLink="/dashboard">Dashboard</a>
-    <button routerLink="/">Sair</button>
+    <button (click)="exit()">Sair</button>
   </div>
 </ng-template>
