@@ -2,9 +2,9 @@
   <app-dashboard-header/>
 
   <main class="container" *ngIf="!ProfileModeEdit, else editProfile ">
-    <button (click)="ChangeProfileMode()">
-      <i class="ph-pencil"></i>
+    <button class="edit-button" (click)="ChangeProfileMode()">
       Editar
+      <i class="ph-pencil"></i>
     </button>
 
     <form>
@@ -20,19 +20,17 @@
       <label for="phone">Telefone:</label>
       <input type="phone" name="phone" id="phone" disabled [value]="User.phone">
 
-      <fieldset>
-        <label for="address">Endereço:</label>
-        <div *ngFor="let item of User.address">
-          <input type="text" name="address" disabled="" [value]="item.location">
-        </div>
-      </fieldset>
+      <label for="address">Endereço:</label>
+      <div *ngFor="let item of User.address">
+        <input type="text" name="address" disabled="" [value]="item.location">
+      </div>
     </form>
 
   </main>
 </div>
 
 <ng-template #editProfile>
-  <form>
+  <form class="secondary">
     <label for="name">Nome:</label>
     <input type="text" name="name" id="name" [(ngModel)]="User.name">
 
@@ -45,14 +43,12 @@
     <label for="phone">Telefone:</label>
     <input type="phone" name="phone" id="phone" [(ngModel)]="User.phone">
 
-    <fieldset>
-      <label for="address">Endereço:</label>
-      <div *ngFor="let item of User.address, let i = index">
-        <input type="text" #name="ngModel" name="address{{i}}" [(ngModel)]="item.location" [value]="item.location">
-        <button (click)="RemoveAddressField(i)"><i class="ph-trash"></i></button>
-      </div>
-      <button (click)="AppendNewAddressField()"><i class="ph-plus"></i></button>
-    </fieldset>
+    <label for="address">Endereço:</label>
+    <div *ngFor="let item of User.address, let i = index">
+      <input type="text" #name="ngModel" name="address{{i}}" [(ngModel)]="item.location" [value]="item.location">
+      <button (click)="RemoveAddressField(i)"><i class="ph-trash"></i></button>
+    </div>
+    <button (click)="AppendNewAddressField()"><i class="ph-plus"></i></button>
 
     <button (click)="UpdateProfileData()">Atualizar</button>
   </form>
