@@ -1,0 +1,52 @@
+header {
+  width: 100%;
+  background-color: white;
+  padding: 10px 0;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1150px;
+    margin: 0 auto;
+
+    align-items: center;
+
+    h1 {
+      color: #123952;
+      font-size: 2.5rem;
+
+      span {
+        color: #F25D27;
+      }
+    }
+
+    .profile-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      a {
+        color: #123952;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-decoration: 2px underline;
+      }
+
+      button {
+        padding: 0.5rem 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: white;
+        background-color: #F25D27;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: filter 0.2s ease;
+
+        &:hover {
+          filter: brightness(1.3);
+        }
+      }
+    }
+  }
+}

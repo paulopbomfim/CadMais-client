@@ -2,15 +2,15 @@
   <div class="header-container">
     <h1 class="header-title">Cad<span>+</span></h1>
     <nav class="header-navigation">
-      <a routerLink="/">Home</a>
-      <a routerLink="/contact">Entre em contato</a>
+      <a routerLink="/"><span [ngClass]="markPageHome()">Home</span></a>
+      <a routerLink="/contact"><span [ngClass]="markPageContact()">Entre em contato</span></a>
     </nav>
     <a
       type="button"
       class="login-button"
       routerLink="/login"
     >
-      Login
+      Entrar
     </a>
   </div>
 </header>

@@ -30,6 +30,19 @@ header {
         position: relative;
         color: #123952;
 
+        .home::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          border-radius: 5px;
+          width: 80%;
+          transform: scaleX(1);
+          height: 5px;
+          transform-origin: left;
+          background-color: #F25D27;
+        }
+
         &::after {
           content: "";
           position: absolute;
@@ -41,14 +54,27 @@ header {
           transform: scaleX(0);
           transform-origin: left;
           background-color: #F25D27;
-          transition: transform 0.1s ease-in-out
+          transition: transform 0.1s ease-in-out;
         }
 
         &:hover::after {
-          width: 80%;
           transform: scaleX(1);
         }
       }
+
+
+
+      .contact::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        border-radius: 5px;
+        width: 80%;
+        height: 5px;
+        transform-origin: left;
+        background-color: #F25D27;
+        }
     }
 
     .login-button {
