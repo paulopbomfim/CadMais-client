@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ContactComponent } from './contact/contact.component';
+import { DashboardHeaderComponent } from './components/dashboard-header/dashboard-header.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { ContactComponent } from './contact/contact.component';
     DashboardComponent,
     ProfileComponent,
     HeaderComponent,
-    ContactComponent
+    ContactComponent,
+    DashboardHeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

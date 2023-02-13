@@ -1,1 +1,61 @@
-<p>profile works!</p>
+<div>
+  <app-dashboard-header/>
+
+  <main class="container" *ngIf="!ProfileModeEdit, else editProfile ">
+    <button (click)="ChangeProfileMode()">
+      <i class="ph-pencil"></i>
+      Editar
+    </button>
+
+    <form>
+      <label for="name">Nome:</label>
+      <input type="text" name="name" id="name" disabled [value]="User.name">
+
+      <label for="cpf">CPF:</label>
+      <input type="text" name="cpf" id="cpf" disabled [value]="User.cpf">
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" disabled [value]="User.email">
+
+      <label for="phone">Telefone:</label>
+      <input type="phone" name="phone" id="phone" disabled [value]="User.phone">
+
+      <fieldset>
+        <label for="address">Endereço:</label>
+        <div *ngFor="let item of User.address">
+          <input type="text" name="address" disabled="" [value]="item.location">
+        </div>
+      </fieldset>
+    </form>
+
+  </main>
+</div>
+
+<ng-template #editProfile>
+  <form>
+    <label for="name">Nome:</label>
+    <input type="text" name="name" id="name" [(ngModel)]="User.name">
+
+    <label for="cpf">CPF:</label>
+    <input type="text" name="cpf" id="cpf" [(ngModel)]="User.cpf">
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" [(ngModel)]="User.email">
+
+    <label for="phone">Telefone:</label>
+    <input type="phone" name="phone" id="phone" [(ngModel)]="User.phone">
+
+    <fieldset>
+      <label for="address">Endereço:</label>
+      <div *ngFor="let item of User.address, let i = index">
+        <input type="text" #name="ngModel" name="address{{i}}" [(ngModel)]="item.location" [value]="item.location">
+        <button (click)="RemoveAddressField(i)"><i class="ph-trash"></i></button>
+      </div>
+      <button (click)="AppendNewAddressField()"><i class="ph-plus"></i></button>
+    </fieldset>
+
+    <button (click)="UpdateProfileData()">Atualizar</button>
+  </form>
+
+  <button (click)="ChangeProfileMode()">Cancelar</button>
+</ng-template>

@@ -1,1 +1,44 @@
-<p>register works!</p>
+<main>
+  <div class="container">
+    <div class="title-section">
+      <a routerLink="/dashboard" class="arrow-back"><i class="ph-arrow-left"></i></a>
+      <h1>Cad<span>+</span></h1>
+      <span class="subtitle">Registre um novo usuário</span>
+    </div>
+    <form class="register-form">
+      <div class="form-label">
+        <label for="name">Nome do usuário:</label>
+        <input type="text" name="name" id="name" [(ngModel)]="User.name">
+      </div>
+      <div class="form-label">
+        <label for="email">Endereço de email:</label>
+        <input type="email" name="email" id="email" [(ngModel)]="User.email">
+      </div>
+      <div class="form-label">
+        <label for="cpf">CPF do usuário:</label>
+        <input type="text" name="cpf" id="cpf" [(ngModel)]="User.cpf">
+      </div>
+      <div class="form-label">
+        <label for="phone">Número para contato:</label>
+        <input type="phone" name="phone" id="phone" [(ngModel)]="User.phone">
+      </div>
+
+      <div class="form-label">
+        <label for="password">Sua senha:</label>
+        <input type="password" name="password" id="password" [(ngModel)]="User.password">
+      </div>
+
+      <div class="form-label">
+        <label for="address">Endereços:</label>
+        <div class="address-input" *ngFor="let item of User.address, let i = index">
+          <input type="text" #name="ngModel" name="address{{i}}" [(ngModel)]="item.location" [value]="item.location">
+          <button class="trash-button" (click)="RemoveAddressField(i)"><i class="ph-trash"></i></button>
+        </div>
+        <button class="add-address-button" (click)="AppendNewAddressField()"><i class="ph-plus"></i></button>
+      </div>
+
+
+      <button (click)="create()">Cadastrar</button>
+    </form>
+  </div>
+</main>

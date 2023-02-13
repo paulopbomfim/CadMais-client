@@ -1,3 +1,4 @@
+import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   },
 ];
 
